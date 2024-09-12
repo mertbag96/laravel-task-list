@@ -91,4 +91,16 @@ class TaskController extends Controller
 
         return redirect()->route('index')->with('message', 'Task was successfully deleted!');
     }
+
+    /**
+     * Toggle task status
+     * @param \App\Models\Task $task
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function toggle(Task $task): RedirectResponse
+    {
+        $task->toggle();
+
+        return redirect()->back()->with('message', 'Task status was successfully updated!');
+    }
 }

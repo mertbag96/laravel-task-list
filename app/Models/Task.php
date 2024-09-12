@@ -33,4 +33,14 @@ class Task extends Model
         'long_description' => 'string',
         'completed' => 'boolean'
     ];
+
+    /**
+     * Toggle task status
+     * @return void
+     */
+    public function toggle(): void
+    {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
 }

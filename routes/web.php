@@ -24,4 +24,5 @@ Route::prefix('tasks')->name('tasks.')->group(function () {
     Route::get('/{task}/edit', [TaskController::class, 'edit'])->name('edit');
     Route::put('/{task}', [TaskController::class, 'update'])->name('update');
     Route::delete('/{task}', [TaskController::class, 'destroy'])->name('destroy');
+    Route::put('/{task}/toggle-complete', [TaskController::class, 'toggle'])->name('toggle');
 });

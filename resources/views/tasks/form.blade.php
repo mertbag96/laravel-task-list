@@ -10,9 +10,7 @@
             @method('PUT')
         @endisset
         <div class="mb-4">
-            <label for="title">
-                Title
-            </label>
+            <label for="title">Title</label>
             <input text="text" name="title" id="title" @class(['border-red-500' => $errors->has('title')])
                 value="{{ $task->title ?? old('title') }}" />
             @error('title')

@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'All tasks')
+@section('title', 'All Tasks')
 
 @section('content')
 
-    <nav class="mb-4">
+    <nav class="mb-8">
         <a href="{{ route('tasks.create') }}" class="link">
             Add Task
         </a>
     </nav>
 
     @forelse ($tasks as $task)
-        <div>
-            <a href="{{ route('tasks.show', ['task' => $task->id]) }}" @class(['line-through' => $task->completed])>
+        <div class="mb-4">
+            <a href="{{ route('tasks.show', ['task' => $task->id]) }}" @class(['line-through' => $task->completed, 'task'])>
                 {{ $task->title }}
             </a>
         </div>
@@ -21,7 +21,7 @@
     @endforelse
 
     @if ($tasks->count())
-        <nav class="mt-4">
+        <nav class="mt-12">
             {{ $tasks->links() }}
         </nav>
     @endif
